@@ -1,0 +1,19 @@
+server:
+  port: 88
+
+spring:
+  application:
+    name: microshop-gateway
+  profiles:
+    active: dev
+  config:
+    import: nacos:${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml #looking for: microshop-gateway-dev.yaml
+        namespace: ${spring.profiles.active}
+      discovery:
+        server-addr: 127.0.0.1:8848

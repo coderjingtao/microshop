@@ -1,0 +1,14 @@
+spring:
+  config:
+    import: optional:bootstrap.yml
+
+  cloud:
+    gateway:
+      routes:
+        - id: product-route
+          uri: lb://microshop-products
+          predicates:
+            - Path=/api/products/**
+          ## 把路径前面的/api去掉:http://localhost:88/api/products/test 转发到：http://localhost:10000/products/test
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}

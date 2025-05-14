@@ -136,7 +136,7 @@ CREATE TABLE `pms_category`  (
   `parent_cid` bigint(0) NULL DEFAULT NULL COMMENT '父分类id',
   `cat_level` int(0) NULL DEFAULT NULL COMMENT '层级',
   `show_status` tinyint(0) NULL DEFAULT NULL COMMENT '是否显示[0-不显示，1显示]',
-  `sort` int(0) NULL DEFAULT NULL COMMENT '排序',
+  `sort` int(0) NOT NULL DEFAULT 0 COMMENT '排序',
   `icon` char(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '图标地址',
   `product_unit` char(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '计量单位',
   `product_count` int(0) NULL DEFAULT NULL COMMENT '商品数量',
@@ -1571,7 +1571,7 @@ INSERT INTO `pms_category` VALUES (1421, '跑车（二手）', 164, 3, 1, 0, NUL
 INSERT INTO `pms_category` VALUES (1422, '皮卡（二手）', 164, 3, 1, 0, NULL, NULL, 0);
 INSERT INTO `pms_category` VALUES (1423, '面包车（二手）', 164, 3, 1, 0, NULL, NULL, 0);
 INSERT INTO `pms_category` VALUES (1431, 'dsa323', 1, 2, 1, 13, NULL, NULL, NULL);
-INSERT INTO `pms_category` VALUES (1432, 'fdsffdsadddd大萨达', 1431, 3, 1, NULL, NULL, NULL, NULL);
+INSERT INTO `pms_category` VALUES (1432, 'fdsffdsadddd大萨达', 1431, 3, 1, 0, NULL, NULL, NULL);
 INSERT INTO `pms_category` VALUES (1433, '测试分类1', 1, 2, 0, 0, 'xxx', '', NULL);
 INSERT INTO `pms_category` VALUES (1434, '测试分类2', 1433, 3, 0, 0, '', '', NULL);
 INSERT INTO `pms_category` VALUES (1435, '测试分类', 1, 2, 0, 5, '测试分类', '测试分类', NULL);
